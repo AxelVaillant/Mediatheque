@@ -14,7 +14,7 @@ public class User {
 	@Id
 	@GeneratedValue(strategy= GenerationType.IDENTITY)
 	@Column(name="id_user")
-	private int iduser;
+	private long iduser;
 	private String nom;
 	private String prenom;
 	private String password;
@@ -22,7 +22,7 @@ public class User {
 	@OneToOne
 	@JoinColumn(name="role")
 	private Role role;
-	public User(int iduser, String nom, String prenom, String password, String login, Role role) {
+	public User(long iduser, String nom, String prenom, String password, String login, Role role) {
 		super();
 		this.iduser = iduser;
 		this.nom = nom;
@@ -37,10 +37,10 @@ public class User {
 		// TODO Auto-generated constructor stub
 	}
 
-	public int getIduser() {
+	public long getIduser() {
 		return iduser;
 	}
-	public void setIduser(int iduser) {
+	public void setIduser(long iduser) {
 		this.iduser = iduser;
 	}
 	public String getNom() {

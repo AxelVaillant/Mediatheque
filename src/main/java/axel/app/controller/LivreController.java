@@ -50,4 +50,13 @@ public Livre updateLivre(@PathVariable long id, @RequestBody Livre Livre) {
 	Livremodif.setDescription(Livre.getDescription());
 	return livreservice.updateLivre(Livre);
 }
+@PutMapping("/emprunt/{id}")
+public long emprunt(@PathVariable long id , @RequestBody String login) {
+	 return livreservice.emprunt(id, login);
+}
+
+@PutMapping("/annulation/{id}")
+public long emprunt(@PathVariable long id ) {
+	 return livreservice.annulation(id);
+}
 }

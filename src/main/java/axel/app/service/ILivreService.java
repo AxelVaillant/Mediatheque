@@ -13,4 +13,6 @@ public interface ILivreService {
 	public Livre createLivre(Livre livre);
 	public long deleteLivre(long id);
 	public Livre updateLivre(Livre livre);
+	public long emprunt(long id, String login);
+	public long annulation(long id);
 }

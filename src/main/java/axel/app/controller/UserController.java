@@ -48,13 +48,14 @@ public class UserController {
 		usermodif.setNom(user.getNom());
 		usermodif.setPrenom(user.getPrenom());
 		usermodif.setPassword(user.getPassword());
+		usermodif.setLogin(user.getLogin());
 		usermodif.setRole(user.getRole());
 		return userservice.updateUser(user);
 	}
 	
 	@PostMapping("/login")
 	public User login (@RequestBody User user) {
-		return userservice.identification(user.getNom(),user.getPassword());
+		return userservice.identification(user.getLogin(),user.getPassword());
 	}
 
 }

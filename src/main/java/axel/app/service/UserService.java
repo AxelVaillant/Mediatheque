@@ -39,7 +39,7 @@ public class UserService implements IUserService{
 
 	@Override
 	public User createUser(User user) {
-		if(userrepository.findByNom(user.getNom())== null) {
+		if(userrepository.findByLogin(user.getLogin())== null) {
 		user.setPassword(cryptageService.encode( user.getPassword()));}
 return userrepository.save(user);
 	}
@@ -63,8 +63,8 @@ return userrepository.save(user);
 	}
 
 	@Override
-	public User identification(String nom, String password) {
-		User  u= userrepository.findByNom(nom);
+	public User identification(String login, String password) {
+		User  u= userrepository.findByLogin(login);
 		if (u!= null) {
 		if(cryptageService.matches(password, u.getPassword())) {
 			System.out.println("Access granted ");
