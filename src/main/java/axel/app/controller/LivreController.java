@@ -56,7 +56,7 @@ public long emprunt(@PathVariable long id , @RequestBody String login) {
 }
 
 @PutMapping("/annulation/{id}")
-public long emprunt(@PathVariable long id ) {
-	 return livreservice.annulation(id);
+public long emprunt(@PathVariable long id, @RequestBody Livre l ) {
+	 return livreservice.annulation(id,l);
 }
 }

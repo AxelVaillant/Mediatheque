@@ -29,8 +29,12 @@ public Notification() {
 	super();
 	// TODO Auto-generated constructor stub
 }
-public Notification(String login, Livre livre2, Date date2) {
-	// TODO Auto-generated constructor stub
+
+public Notification(Date date, Livre livre, String nomEtudiant) {
+	super();
+	this.nomEtudiant = nomEtudiant;
+	this.date = date;
+	this.livre = livre;
 }
 public long getIdNotif() {
 	return idNotif;

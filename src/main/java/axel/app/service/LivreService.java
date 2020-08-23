@@ -62,7 +62,7 @@ public class LivreService implements ILivreService{
 			livre=livre1.get();}
 		if(livre.getQuantite()>0) {
 			livre.setQuantite(livre.getQuantite()-1);
-			Notification n = new Notification(login,livre,new Date());
+			Notification n = new Notification(new Date(),livre,login);
 			notifrepository.save(n);
 
 		}
@@ -73,13 +73,13 @@ public class LivreService implements ILivreService{
 	}
 
 	@Override
-	public long annulation(long id) {
+	public long annulation(long id,Livre l) {
 		Optional<Livre> livre1 =livrerepository.findById(id);
 		Livre livre = new Livre();
 		if(livre1.isPresent()) {
 			livre=livre1.get();}
 		livre.setQuantite(livre.getQuantite()+1);
-		
+		livrerepository.save(livre);
 		return 1;
 	}
 
